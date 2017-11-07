@@ -18,15 +18,16 @@
     // }
 
     function redirect() {
-      console.log('reeeeeedirect')
+      console.log('header reeeeeedirect')
       document.getElementById('formToApp').submit();
+      document.getElementById('linkToApp').click();
     }
   </script>
 
 </head>
 
 <body onload="return redirect();">
-  <a href="intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;">Redirect to App 3</a>
+  <a id="linkToApp" href="intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;">Redirect to App 3</a>
 
   <form id="formToApp" action="intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;" method="get">
     <input type="hidden" name="package" value="de.aboutyou.mobile.app" />
@@ -34,11 +35,6 @@
   </form>
 
   <script>
-    function redirect() {
-      console.log('reeeeeedirect')
-      document.getElementById('formToApp').submit();
-    }
-
     redirect();
   </script>
 
