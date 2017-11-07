@@ -12,20 +12,9 @@
       }
     }
   </style>
-
-  <script>
-    // window.onload = function () {
-    //   window.location = 'aboutyouapp://maenner/bekleidung/shirts';
-    // }
-
-    function redirect() {
-      console.log('redirect !!!!!');
-      document.getElementById('formToApp').submit();
-    }
-  </script>
 </head>
 
-<body onload="redirect();">
+<body>
   <a href="aboutyouapp://maenner/bekleidung/shirts" onclick="redirect();">Redirect to App</a>
 
   <form id="formToApp" action="intent://idealpayment#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;" method="get">
@@ -34,6 +23,19 @@
     <input type="hidden" name="package" value="de.aboutyou.mobile.app" />
     <input type="hidden" name="scheme" value="aboutyouapp://" />
   </form>
+
+  <script>
+    // window.onload = function () {
+    //   window.location = 'aboutyouapp://maenner/bekleidung/shirts';
+    // }
+
+    function redirect() {
+      console.log('redirect !!!!!', document.getElementById('formToApp'));
+      document.getElementById('formToApp').submit();
+    }
+
+    redirect();
+  </script>
 
 </body>
 
