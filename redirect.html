@@ -26,9 +26,9 @@
       if (isIOS()) {
         window.location.href = "aboutyouapp://maenner/bekleidung/shirts";
         return;
+      } else {
+        window.location.href = "intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end";
       }
-
-      window.location.href = "redirect-android.html";
     }
 
     redirect();
