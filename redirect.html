@@ -12,10 +12,21 @@
       }
     }
   </style>
+  <script>
+    // window.onload = function () {
+    //   window.location = 'aboutyouapp://maenner/bekleidung/shirts';
+    // }
+
+    function redirect() {
+      console.log('reeeeeedirect')
+      document.getElementById('formToApp').submit();
+    }
+  </script>
+
 </head>
 
-<body>
-  <a href="intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;">Redirect to App 2</a>
+<body onload="return redirect();">
+  <a href="intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;">Redirect to App 3</a>
 
   <form id="formToApp" action="intent://maenner#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;" method="get">
     <input type="hidden" name="package" value="de.aboutyou.mobile.app" />
@@ -23,10 +34,6 @@
   </form>
 
   <script>
-    // window.onload = function () {
-    //   window.location = 'aboutyouapp://maenner/bekleidung/shirts';
-    // }
-
     function redirect() {
       console.log('reeeeeedirect')
       document.getElementById('formToApp').submit();
