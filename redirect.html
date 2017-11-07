@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
-  <title>About you</title>
+  <title>about you redirect</title>
   <style>
     @media screen and (max-device-width:480px) {
       body {
@@ -14,14 +14,27 @@
   </style>
 
   <script>
-    window.onload = function () {
-      window.location = 'aboutyouapp://maenner/bekleidung/shirts';
+    // window.onload = function () {
+    //   window.location = 'aboutyouapp://maenner/bekleidung/shirts';
+    // }
+
+    function redirect() {
+      console.log('redirect !!!!!');
+      document.getElementById('formToApp').submit();
     }
   </script>
 </head>
 
-<body>
-  <a href="aboutyouapp://maenner/bekleidung/shirts">Redirect to App</a>
+<body onload="redirect();">
+  <a href="aboutyouapp://maenner/bekleidung/shirts" onclick="redirect();">Redirect to App</a>
+
+  <form id="formToApp" action="intent://idealpayment#Intent;package=de.aboutyou.mobile.app;scheme=aboutyouapp;end;" method="get">
+    <input type="hidden" name="ec" value="" />
+    <input type="hidden" name="device" value="android" />
+    <input type="hidden" name="package" value="de.aboutyou.mobile.app" />
+    <input type="hidden" name="scheme" value="aboutyouapp://" />
+  </form>
+
 </body>
 
 </html>
